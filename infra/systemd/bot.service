@@ -1,0 +1,15 @@
+[Unit]
+Description=VPN platform bot polling runner
+After=network.target
+
+[Service]
+Type=simple
+User=vpn
+WorkingDirectory=/opt/vpn/VPN_forClients
+EnvironmentFile=/opt/vpn/VPN_forClients/.env
+ExecStart=/opt/vpn/.venv/bin/python -m bot_app.main
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

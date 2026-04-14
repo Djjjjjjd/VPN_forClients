@@ -1,0 +1,10 @@
+[Unit]
+Description=Run VPN platform subscription cleanup every 10 minutes
+
+[Timer]
+OnBootSec=2m
+OnUnitActiveSec=10m
+Unit=subscription-cleanup.service
+
+[Install]
+WantedBy=timers.target

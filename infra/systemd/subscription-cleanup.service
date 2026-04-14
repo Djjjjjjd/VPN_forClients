@@ -1,0 +1,10 @@
+[Unit]
+Description=VPN platform subscription cleanup
+After=network.target
+
+[Service]
+Type=oneshot
+User=vpn
+WorkingDirectory=/opt/vpn/VPN_forClients
+EnvironmentFile=/opt/vpn/VPN_forClients/.env
+ExecStart=/opt/vpn/.venv/bin/python -m backend_app.jobs
